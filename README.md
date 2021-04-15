@@ -1,10 +1,9 @@
-# Simple lazy loaded app with login screen and form
+# Simple lazy loaded app with register screen and form
 
 Initial app structure initialized with angular-cli.
 
 # TODO:
-1. Change login to register
-
+TBD...
 # Form description
 
 Inputs:
