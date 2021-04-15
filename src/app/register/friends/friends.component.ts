@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormArray, FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
-import { LoginFormService } from '../services/form.service';
+import { RegisterFormService } from '../services/form.service';
 
 @Component({
     selector: 'app-login-friends',
@@ -13,7 +13,7 @@ export class LoginFriendsComponent {
 
     friendList = new FormArray([]);
 
-    constructor(private formService: LoginFormService) {
+    constructor(private formService: RegisterFormService) {
         this.formService.loginForm.addControl('friends', this.friendList);
         this.addField();
     }

@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
 import { SnackbarService } from '../core/services/snackbar.service';
-import { LoginFormService } from './services/form.service';
+import { RegisterFormService } from './services/form.service';
 import { FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss'],
   providers: [
-    LoginFormService
+    RegisterFormService
   ]
 })
-export class LoginComponent {
+export class RegisterComponent {
 
   constructor(
     private snackbarService: SnackbarService,
-    public formService: LoginFormService
+    public formService: RegisterFormService
   ) { }
 
   get loginForm(): FormGroup {

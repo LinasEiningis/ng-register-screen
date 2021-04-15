@@ -26,7 +26,7 @@ const passwordConfirmValidator: ValidatorFn = (control: AbstractControl) => {
 };
 
 @Injectable()
-export class LoginFormService {
+export class RegisterFormService {
     loginForm = new FormGroup({
         name: new FormControl('', Validators.required),
         email: new FormControl('', [

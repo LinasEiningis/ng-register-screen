@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SiteGuard } from './core/guards/site.guard';
 
 const routes: Routes = [
   {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then(mod => mod.LoginModule)
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then(mod => mod.RegisterModule)
   },
   {
     path: '',
     loadChildren: () => import('./site/site.module').then(mod => mod.SiteModule),
-    // canActivate: SomeGuard
+    canActivate: [SiteGuard]
   },
   {
     path: '**',

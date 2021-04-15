@@ -3,6 +3,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SiteGuard } from './guards/site.guard';
 import { SnackbarService } from './services/snackbar.service';
 
 const MATERIAL_MODULES = [
@@ -20,7 +21,8 @@ const MATERIAL_MODULES = [
         MATERIAL_MODULES
     ],
     providers: [
-        SnackbarService
+        SnackbarService,
+        SiteGuard
     ],
 })
 export class CoreModule {}
