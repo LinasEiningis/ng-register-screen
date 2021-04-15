@@ -1,0 +1,18 @@
+.login-screen-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.login-card {
+    min-width: 600px;
+    min-height: 200px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,1 +1,53 @@
-<p>login works!</p>
+<div class='login-screen-wrapper'>
+    <mat-card class="login-card">
+        <form class='login-form' [formGroup]="loginForm">
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input matInput type="text" formControlName="name" required>
+                <mat-error *ngIf="formControlHasError('name', 'required')">
+                    Name must be filled 
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput type="email" formControlName="email" required>
+                <mat-error *ngIf="formControlHasError('email', 'required')">
+                    Email must be filled
+                </mat-error>
+                <mat-error *ngIf="formControlHasError('email', 'email')">
+                    Email must be a valid email
+                </mat-error>
+                <mat-error *ngIf="formControlHasError('email', 'emailInDb')">
+                    This email already exists in our database
+                </mat-error>
+            </mat-form-field>
+
+            <ng-container [formGroup]="passwordGroup">
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" formControlName="password" required>
+                    <mat-error *ngIf="formControlHasError('password', 'required')">
+                        Password field must be filled
+                    </mat-error>
+                </mat-form-field>
+    
+                <mat-form-field>
+                    <mat-label>Password repeat</mat-label>
+                    <input matInput type="password" formControlName="passwordConfirm" required>
+                    <mat-error *ngIf="formControlHasError('passwordConfirm', 'required')">
+                        Password confirmation field must be filled
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-error *ngIf="formControlHasError('passwords', 'mismatch')">
+                    Passwords must match!
+                </mat-error>
+            </ng-container>
+            
+            <app-login-friends></app-login-friends>
+        </form>
+
+        <button mat-raised-button color="secondary" (click)="onSubmit()" [disabled]="loginForm.invalid">Submit!</button>
+    </mat-card>
+</div>

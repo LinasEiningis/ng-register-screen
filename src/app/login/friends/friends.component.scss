@@ -1,0 +1,13 @@
+.friend-form {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.friend-form mat-form-field {
+    width: 100%;
+
+    &:not(:last-of-type) {
+        margin-right: 10px;
+    }
+}
